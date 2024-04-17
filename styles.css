@@ -1,0 +1,202 @@
+:root {
+    --text: #dde1fa;
+    --background: #04091d;
+    --primary: #8795ef;
+    --secondary: #891516;
+    --accent: #deb828;
+}
+
+*,
+*::before,
+*::after {
+    font-family: 'Roboto Slab', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* https://stackoverflow.com/questions/69430/is-there-a-way-to-make-text-unselectable-on-an-html-page */
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accent {
+    color: var(--accent)
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--text);
+    /* top | right | bottom | left */
+    margin: 0.5em 1.5em 0.4em 1.5em;
+}
+
+hr {
+    background-color: var(--text);
+    color: var(--text);
+    width: 100%;
+}
+
+@media screen and (min-width: 788px) {
+    hr {
+        width: 80%;
+        border-radius: 10px;
+    }
+}
+
+main {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#results-div {
+    color: var(--text);
+    border: 8px solid var(--accent);
+    border-radius: 100em;
+    padding: 1.5em;
+    font-size: 1.8em;
+    background: transparent;
+}
+
+.error {
+    color: red;
+}
+
+form {
+    background-color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 2em;
+    /* top | right | bottom | left */
+    padding: 2em 2em 2em 2em;
+}
+
+/* https://stackoverflow.com/questions/63435359/animating-the-labels-on-input-focus-with-css-and-javascript */
+#user-input {
+    width: 100%;
+    background-color: rgba(4, 9, 29, 0.2);
+    border: none;
+    border-bottom: 2px solid var(--background);
+    border-radius: 2px;
+    color: var(--background);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.input-label {
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.label-span {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    transition: all 0.2s;
+    pointer-events: none;
+    color: rgba(4, 9, 29, 0.7);
+}
+
+#user-input:focus+.label-span,
+#user-input.filled+.label-span {
+    top: -1.9rem;
+    left: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--background);
+}
+
+.buttons {
+    margin-top: 2em;
+    display: flex;
+    gap: 2em;
+}
+
+button {
+    background-color: var(--accent);
+    border: 1px solid var(--background);
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgb(148, 144, 144);
+    transition: all 0.1s ease-in-out;
+}
+
+button:active {
+    background-color: var(--background);
+    color: var(--accent);
+    transition: all 0.1s ease-in-out;
+    transform: translateX(-2%);
+    transform: translateY(2%);
+    box-shadow: none;
+}
+
+.format-table {
+    color: var(--text);
+    font-size: 1.1rem;
+    text-align: center;
+    border: 1px solid var(--text);
+    padding: 0 1em;
+    /* https://stackoverflow.com/questions/1264187/css-how-do-i-create-a-gap-between-rows-in-a-table */
+    border-collapse: separate;
+    border-spacing: 0 0.5em;
+    border-radius: 5px;
+}
+
+.format-table thead tr th{
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 0.5em;
+    color: var(--accent);
+}
+
+footer {
+    flex: 0 1 auto;
+
+    color: var(--text);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.github-link {
+    color: var(--accent);
+    text-decoration: none;
+}

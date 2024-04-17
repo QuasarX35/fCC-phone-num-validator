@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>US Phone Number Validator</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">US Phone Number <span class="accent">Validator</span></h1>
+        <hr>
+    </header>
+    <main>
+        <div id="results-div" hidden>
+            Please provide a phone number
+        </div>
+        <form onsubmit="return checkInput(event)">
+            <div class="input-area">
+                <label for="user-input" class="input-label">
+                    <!-- https://stackoverflow.com/questions/43132693/how-to-turn-off-html-input-form-field-suggestions -->
+                    <input id="user-input" type="text" autocomplete="off" />
+                    <span class="label-span unselectable">Phone Number</span>
+                </label>
+            </div>
+            <div class="buttons">
+                <button type="button" id="check-btn" class="unselectable">Check</button>
+                <button type="button" id="clear-btn" class="unselectable">Clear</button>
+            </div>
+        </form>
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Allowed Formats (X = any number)</th>
+                </tr>
+            </thead>
+            <span class="accent">
+                <span class="accent">
+                    <tr>
+                        <td>1 XXX<span class="accent">-</span>XXX<span class="accent">-</span>XXXX</td>
+                    </tr>
+                </span>
+            </span>
+            <tr>
+                <td>1 <span class="accent">(</span>XXX<span class="accent">)</span> XXX<span class="accent">-</span>XXXX
+                </td>
+            </tr>
+            <tr>
+                <td>1<span class="accent">(</span>XXX<span class="accent">)</span>XXX<span class="accent">-</span>XXXX
+                </td>
+            </tr>
+            <tr>
+                <td>1 XXX XXX XXXX</td>
+            </tr>
+            <tr>
+                <td>XXXXXXXXXX</td>
+            </tr>
+            <tr>
+                <td>XXX<span class="accent">-</span>XXX<span class="accent">-</span>XXXX</td>
+            </tr>
+            <tr>
+                <td><span class="accent">(</span>XXX<span class="accent">)</span>XXX<span class="accent">-</span>XXXX
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>Made by <a href="https://github.com/QuasarX35/phone-num-validator" class="github-link">QuasarX35</a> ©
+            2024. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
