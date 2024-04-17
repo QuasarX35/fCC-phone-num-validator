@@ -1,5 +1,5 @@
 # US Phone Number Validator
-This web application validates the format of a phone number against US phone number standards. It was created as a certification project for the FreeCodeCamp Javascript course. It can be accessed [here].
+This web application validates the format of a phone number against US phone number standards. It was created as a certification project for the FreeCodeCamp Javascript course. It can be accessed [here](https://kyze-phone-num-validator.netlify.app).
 
 Important Note: This application only checks the format of the phone number and does not guarantee the number is actually callable or assigned.
 
